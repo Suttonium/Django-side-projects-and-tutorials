@@ -1,0 +1,27 @@
+h1 {
+    font-family: Arial, serif;
+}
+
+p {
+    font-family: monospace;
+}
+
+body {
+    /*Whenever a font size is set in the body, you are setting a ratio for the future.
+    As you can see within the #two portion, I am setting the font-size to 2.0em. In this case, the 20px set in the body
+    is equal to 1em*/
+    font-size: 20px;
+}
+
+#two {
+    /*Because the default font-size is set to 20px for the body, this id has a font size of 40px now because it is 2em.*/
+    font-size: 2.0em;
+}
+
+p {
+    font-family: 'Barrio', cursive;
+}
+
+h1 {
+    text-align: center;
+}

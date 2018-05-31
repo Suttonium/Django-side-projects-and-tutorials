@@ -1,0 +1,16 @@
+/*This is a comment*/
+h1 {
+    color: blue;
+}
+
+li { /*red, green, blue values*/
+    color: rgb(255, 97, 0);
+}
+
+p { /*hex value*/
+    color: #0895a8;
+}
+
+h4 { /*rgba is red, blue, green, alpha -- alpha being transparency*/
+    color: rgba(255, 97, 0, 0.5)
+}

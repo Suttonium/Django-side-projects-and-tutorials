@@ -1,0 +1,29 @@
+.firstDiv { /*the . means class*/
+    color: blue;
+}
+
+.secondDiv {
+    color: red;
+}
+
+#singledout { /* # means id*/
+    color: green;
+    text-decoration: line-through;
+}
+
+/** { !* * selects every element on the page*!*/
+/*color: black;*/
+/*}*/
+
+h3 + ul { /* any ul next to an h3 element will get the associated border*/
+    border: 4px dotted purple;
+}
+
+li a { /* all anchor tags inside of a li*/
+    color: red;
+}
+
+li a[href="http://www.npr.org"] {
+    color: blue;
+    border: 5px solid orange;
+}
