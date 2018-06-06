@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container">
+        <div class="col-md-8">
+            <h1>Home</h1>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.errors }}
+                {{ form.post }}
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            {% for post in posts %}
+                {{ post.post }}
+                <p>Posted by: {{ post.user.get_full_name }} on {{ post.created }}</p>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h2>Suggested Friends:</h2>
+            {% for user in users %}
+                {% if not user in friends %}
+                    <a href="{% url 'accounts:view-profile-with-pk' pk=user.pk %}">
+                        <h5>{{ user.username }}</h5>
+                        <a href="{% url 'home:change-friend-status' operation='add' pk=user.pk %}">
+                            <button type="button" class="btn btn-success">Add</button>
+                        </a>
+                    </a>
+                {% endif %}
+            {% endfor %}
+            <h2>Friends</h2>
+            {% for friend in friends %}
+                <a href="{% url 'accounts:view-profile-with-pk' pk=user.pk %}">
+                    <h5>{{ friend.username }}</h5>
+                </a>
+                <a href="{% url 'home:change-friend-status' operation='remove' pk=friend.pk %}">
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
